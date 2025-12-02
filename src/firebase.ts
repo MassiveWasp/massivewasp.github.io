@@ -3,12 +3,13 @@ import { getAuth } from "firebase/auth";
 
 // TODO: Replace with your actual Firebase project configuration
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "PLACEHOLDER_KEY",
-    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "placeholder.firebaseapp.com",
-    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "placeholder-project",
-    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "placeholder.appspot.com",
-    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "123456789",
-    appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:123456789:web:abcdef"
+    apiKey: "AIzaSyDltCSqN1mE4tfpbDeKDYUgk2GJNDlmdMs",
+    authDomain: "massivewasp.firebaseapp.com",
+    projectId: "massivewasp",
+    storageBucket: "massivewasp.firebasestorage.app",
+    messagingSenderId: "45374844160",
+    appId: "1:45374844160:web:cd4f4cbadb7bd89c6217e5",
+    measurementId: "G-NGXCW1F91V"
 };
 
 const app = initializeApp(firebaseConfig);
