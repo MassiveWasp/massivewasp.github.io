@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cisco Green Palette */
+  --color-primary: #00bceb;
+  /* Cisco Blue/Cyan accent */
+  --color-secondary: #64be1e;
+  /* Cisco Green */
+  --color-success: #64be1e;
+  --color-warning: #ffc20e;
+  --color-danger: #e2231a;
+
+  /* Dark Mode Backgrounds */
+  --bg-dark: #121212;
+  --bg-card: #1e1e1e;
+  --bg-input: #2d2d2d;
+
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666666;
+
+  /* Typography */
+  --font-mono: 'Courier New', Courier, monospace;
+  --font-sans: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Borders */
+  --border-radius: 8px;
+  --border-color: #333333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
