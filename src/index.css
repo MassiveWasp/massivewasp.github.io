@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  /* Cisco Green Palette */
-  --color-primary: #00bceb;
-  /* Cisco Blue/Cyan accent */
-  --color-secondary: #64be1e;
-  /* Cisco Green */
-  --color-success: #64be1e;
+  /* PVH Consult Green Palette */
+  --color-primary: #8fb569;
+  /* Light green accent from logo */
+  --color-secondary: #3d5a3d;
+  /* Dark green from logo */
+  --color-success: #8fb569;
   --color-warning: #ffc20e;
   --color-danger: #e2231a;
 

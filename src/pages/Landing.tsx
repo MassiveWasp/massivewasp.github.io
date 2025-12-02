@@ -19,7 +19,7 @@ export const Landing: React.FC = () => {
                         <img
                             src="/logo.png"
                             alt="PVH Consult"
-                            className="h-24 md:h-32 w-auto object-contain"
+                            className="h-32 md:h-40 lg:h-48 w-auto object-contain"
                         />
                     </div>
 
@@ -57,17 +57,17 @@ export const Landing: React.FC = () => {
             <section className="border-t border-[var(--border-color)] bg-[var(--bg-card)] py-16">
                 <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="p-6">
-                        <Network className="w-10 h-10 text-[var(--color-secondary)] mb-4" />
+                        <Network className="w-10 h-10 text-[var(--color-primary)] mb-4" />
                         <h3 className="text-xl font-bold mb-2">Infrastructure Code</h3>
                         <p className="text-[var(--text-secondary)]">Standardized templates for switching and routing deployment.</p>
                     </div>
                     <div className="p-6">
-                        <Shield className="w-10 h-10 text-[var(--color-secondary)] mb-4" />
+                        <Shield className="w-10 h-10 text-[var(--color-primary)] mb-4" />
                         <h3 className="text-xl font-bold mb-2">Security First</h3>
                         <p className="text-[var(--text-secondary)]">Hardened configurations and audit scripts for compliance.</p>
                     </div>
                     <div className="p-6">
-                        <Zap className="w-10 h-10 text-[var(--color-secondary)] mb-4" />
+                        <Zap className="w-10 h-10 text-[var(--color-primary)] mb-4" />
                         <h3 className="text-xl font-bold mb-2">Rapid Deployment</h3>
                         <p className="text-[var(--text-secondary)]">Zero-touch provisioning tools to speed up rollouts.</p>
                     </div>
