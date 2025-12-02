@@ -14,6 +14,15 @@ export const Landing: React.FC = () => {
                 </div>
 
                 <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+                    {/* Logo */}
+                    <div className="mb-8 flex justify-center">
+                        <img
+                            src="/logo.png"
+                            alt="PVH Consult"
+                            className="h-24 md:h-32 w-auto object-contain"
+                        />
+                    </div>
+
                     <div className="inline-flex items-center space-x-2 bg-[var(--bg-input)] border border-[var(--border-color)] rounded-full px-4 py-1.5 mb-8">
                         <span className="w-2 h-2 bg-[var(--color-success)] rounded-full animate-pulse" />
                         <span className="text-xs font-mono text-[var(--text-secondary)]">SYSTEM ONLINE // V2.0.4</span>
