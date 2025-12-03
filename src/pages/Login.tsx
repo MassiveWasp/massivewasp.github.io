@@ -42,8 +42,17 @@ export const Login: React.FC = () => {
                     <div className="mx-auto w-16 h-16 bg-[var(--color-secondary)] bg-opacity-10 rounded-full flex items-center justify-center mb-4">
                         <ShieldCheck className="w-8 h-8 text-[var(--color-secondary)]" />
                     </div>
-                    <h2 className="text-2xl font-bold text-[var(--text-primary)] tracking-wider">SECURE ACCESS</h2>
-                    <p className="text-[var(--text-secondary)] text-sm mt-2 font-mono">AUTHORIZED PERSONNEL ONLY</p>
+                    <div className="flex flex-col items-center justify-center mb-2">
+                        <div className="flex items-center gap-3 mb-1">
+                            <div className="flex flex-col text-right text-xs font-bold text-[var(--color-secondary)] leading-tight tracking-widest uppercase border-r-2 border-[var(--color-secondary)] pr-2">
+                                <span>Wired</span>
+                                <span>Wireless</span>
+                            </div>
+                            <div className="text-lg font-bold text-[var(--text-primary)] tracking-wider uppercase text-left">
+                                Automation<br />Suite Platform
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <form onSubmit={handleLogin} className="space-y-6">
