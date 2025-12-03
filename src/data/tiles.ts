@@ -50,5 +50,12 @@ export const tilesData: TileData[] = [
         scriptlink: "int_reset.tcl",
         tag: "Troubleshooting",
         description: "Batch reset of error-disabled interfaces."
+    },
+    {
+        title: "Network Discovery",
+        tile_order_nr: 7,
+        scriptlink: "network_discovery.py",
+        tag: "Operations",
+        description: "Automated discovery of network devices and their configuration."
     }
 ];

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card } from './Card';
-import { Button } from './Button';
 import { Download, FileCode } from 'lucide-react';
 
 interface ScriptTileProps {
@@ -11,11 +10,6 @@ interface ScriptTileProps {
 }
 
 export const ScriptTile: React.FC<ScriptTileProps> = ({ title, description, scriptlink, tag }) => {
-    const handleDownload = () => {
-        // Mock download for now
-        alert(`Downloading ${scriptlink}...`);
-    };
-
     return (
         <Card hover className="flex flex-col h-full">
             <div className="flex items-start justify-between mb-4">
@@ -32,10 +26,14 @@ export const ScriptTile: React.FC<ScriptTileProps> = ({ title, description, scri
 
             <div className="mt-auto pt-4 border-t border-[var(--border-color)] flex items-center justify-between">
                 <code className="text-xs text-[var(--text-muted)]">{scriptlink}</code>
-                <Button size="sm" variant="outline" onClick={handleDownload}>
+                <a
+                    href={`/scripts/${scriptlink}`}
+                    download
+                    className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-9 px-3"
+                >
                     <Download className="w-4 h-4 mr-2" />
                     GET
-                </Button>
+                </a>
             </div>
         </Card>
     );
