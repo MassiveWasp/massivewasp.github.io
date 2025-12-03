@@ -28,11 +28,19 @@ export const Landing: React.FC = () => {
                         <span className="text-xs font-mono text-[var(--text-secondary)]">SYSTEM ONLINE // V2.0.4</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                        Advanced Network <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-primary)]">
-                            Automation Suite
-                        </span>
+                    <h1 className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-8">
+                        {/* Stacked Wired/Wireless */}
+                        <div className="flex flex-col text-right items-end justify-center border-r-4 border-[var(--color-secondary)] pr-4 md:pr-6 py-2">
+                            <span className="text-2xl md:text-4xl font-bold text-[var(--text-secondary)] uppercase tracking-widest leading-none">Wired</span>
+                            <span className="text-2xl md:text-4xl font-bold text-[var(--text-secondary)] uppercase tracking-widest leading-none mt-1">Wireless</span>
+                        </div>
+
+                        {/* Gradient Text */}
+                        <div className="text-4xl md:text-6xl font-bold tracking-tight text-left leading-tight">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-primary)]">
+                                Automation Suite<br />Platform
+                            </span>
+                        </div>
                     </h1>
 
                     <p className="text-xl text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto">
