@@ -10,25 +10,6 @@ interface ScriptTileProps {
 }
 
 export const ScriptTile: React.FC<ScriptTileProps> = ({ title, description, scriptlink, tag }) => {
-    const handleDownload = async () => {
-        try {
-            const response = await fetch(`/scripts/${scriptlink}`, { method: 'HEAD' });
-            if (response.ok) {
-                // File exists, trigger download
-                const link = document.createElement('a');
-                link.href = `/scripts/${scriptlink}`;
-                link.download = scriptlink;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
-            // If file doesn't exist, do nothing (fail silently)
-        } catch (error) {
-            // Network error or other issue, fail silently
-            console.error('Download error:', error);
-        }
-    };
-
     return (
         <Card hover className="flex flex-col h-full">
             <div className="flex items-start justify-between mb-4">
@@ -45,13 +26,25 @@ export const ScriptTile: React.FC<ScriptTileProps> = ({ title, description, scri
 
             <div className="mt-auto pt-4 border-t border-[var(--border-color)] flex items-center justify-between">
                 <code className="text-xs text-[var(--text-muted)]">{scriptlink}</code>
-                <button
-                    onClick={handleDownload}
+                <a
+                    href={`/scripts/${scriptlink}`}
+                    download={scriptlink}
+                    onClick={async (e) => {
+                        try {
+                            const response = await fetch(`/scripts/${scriptlink}`, { method: 'HEAD' });
+                            if (!response.ok) {
+                                e.preventDefault();
+                            }
+                        } catch (error) {
+                            e.preventDefault();
+                            console.error('Download check error:', error);
+                        }
+                    }}
                     className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-9 px-3"
                 >
                     <Download className="w-4 h-4 mr-2" />
                     GET
-                </button>
+                </a>
             </div>
         </Card>
     );
