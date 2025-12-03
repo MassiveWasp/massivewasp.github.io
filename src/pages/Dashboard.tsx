@@ -4,53 +4,13 @@ import { Button } from '../components/Button';
 import { ScriptTile } from '../components/ScriptTile';
 import { LogOut, Server, Shield } from 'lucide-react';
 
-const MOCK_SCRIPTS = [
-    {
-        id: 1,
-        title: "VLAN Configuration",
-        description: "Automated script to configure standard VLANs across access switches.",
-        filename: "vlan_config.py",
-        category: "SWITCHING"
-    },
-    {
-        id: 2,
-        title: "OSPF Setup",
-        description: "Rapid deployment of OSPF areas and interface costs.",
-        filename: "ospf_deploy.ansible",
-        category: "ROUTING"
-    },
-    {
-        id: 3,
-        title: "Port Security Audit",
-        description: "Scans interfaces for port security violations and generates a report.",
-        filename: "audit_security.sh",
-        category: "SECURITY"
-    },
-    {
-        id: 4,
-        title: "Firmware Upgrade",
-        description: "Safe firmware upgrade procedure with rollback capability.",
-        filename: "ios_upgrade.py",
-        category: "MAINTENANCE"
-    },
-    {
-        id: 5,
-        title: "ACL Generator",
-        description: "Generates standard ACLs based on policy definitions.",
-        filename: "acl_gen.py",
-        category: "SECURITY"
-    },
-    {
-        id: 6,
-        title: "Interface Reset",
-        description: "Batch reset of error-disabled interfaces.",
-        filename: "int_reset.tcl",
-        category: "TROUBLESHOOTING"
-    }
-];
+import { tilesData } from '../data/tiles';
 
 export const Dashboard: React.FC = () => {
     const { logout, currentUser } = useAuth();
+
+    // Sort tiles by order number
+    const sortedTiles = [...tilesData].sort((a, b) => a.tile_order_nr - b.tile_order_nr);
 
     return (
         <div className="min-h-screen bg-[var(--bg-dark)]">
@@ -84,13 +44,13 @@ export const Dashboard: React.FC = () => {
 
                 {/* Grid Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {MOCK_SCRIPTS.map((script) => (
+                    {sortedTiles.map((tile) => (
                         <ScriptTile
-                            key={script.id}
-                            title={script.title}
-                            description={script.description}
-                            filename={script.filename}
-                            category={script.category}
+                            key={tile.scriptlink}
+                            title={tile.title}
+                            description={tile.description}
+                            scriptlink={tile.scriptlink}
+                            tag={tile.tag}
                         />
                     ))}
                 </div>

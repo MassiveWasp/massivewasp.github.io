@@ -6,14 +6,14 @@ import { Download, FileCode } from 'lucide-react';
 interface ScriptTileProps {
     title: string;
     description: string;
-    filename: string;
-    category: string;
+    scriptlink: string;
+    tag: string;
 }
 
-export const ScriptTile: React.FC<ScriptTileProps> = ({ title, description, filename, category }) => {
+export const ScriptTile: React.FC<ScriptTileProps> = ({ title, description, scriptlink, tag }) => {
     const handleDownload = () => {
         // Mock download for now
-        alert(`Downloading ${filename}...`);
+        alert(`Downloading ${scriptlink}...`);
     };
 
     return (
@@ -23,7 +23,7 @@ export const ScriptTile: React.FC<ScriptTileProps> = ({ title, description, file
                     <FileCode className="w-6 h-6 text-[var(--color-secondary)]" />
                 </div>
                 <span className="text-xs font-mono text-[var(--text-muted)] border border-[var(--border-color)] px-2 py-1 rounded">
-                    {category}
+                    {tag}
                 </span>
             </div>
 
@@ -31,7 +31,7 @@ export const ScriptTile: React.FC<ScriptTileProps> = ({ title, description, file
             <p className="text-[var(--text-secondary)] text-sm mb-6 flex-grow">{description}</p>
 
             <div className="mt-auto pt-4 border-t border-[var(--border-color)] flex items-center justify-between">
-                <code className="text-xs text-[var(--text-muted)]">{filename}</code>
+                <code className="text-xs text-[var(--text-muted)]">{scriptlink}</code>
                 <Button size="sm" variant="outline" onClick={handleDownload}>
                     <Download className="w-4 h-4 mr-2" />
                     GET
