@@ -10,34 +10,9 @@ interface ScriptTileProps {
 }
 
 export const ScriptTile: React.FC<ScriptTileProps> = ({ title, description, scriptlink, tag }) => {
-    const handleDownload = async (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-
-        try {
-            const response = await fetch(`/scripts/${scriptlink}`);
-            if (!response.ok) {
-                // File doesn't exist, fail silently
-                return;
-            }
-
-            // Get the file as a blob
-            const blob = await response.blob();
-
-            // Create a download link
-            const url = window.URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = scriptlink;
-            document.body.appendChild(link);
-            link.click();
-
-            // Cleanup
-            document.body.removeChild(link);
-            window.URL.revokeObjectURL(url);
-        } catch (error) {
-            // Network error or other issue, fail silently
-            console.error('Download error:', error);
-        }
+    const handleDownload = async () => {
+        // Simply navigate to the file - browser will handle download
+        window.location.href = `/scripts/${scriptlink}`;
     };
 
     return (
