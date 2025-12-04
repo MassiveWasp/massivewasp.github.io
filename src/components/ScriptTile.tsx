@@ -10,6 +10,11 @@ interface ScriptTileProps {
 }
 
 export const ScriptTile: React.FC<ScriptTileProps> = ({ title, description, scriptlink, tag }) => {
+    const handleDownload = async () => {
+        // Simply navigate to the file - browser will handle download
+        window.location.href = `/scripts/${scriptlink}`;
+    };
+
     return (
         <Card hover className="flex flex-col h-full">
             <div className="flex items-start justify-between mb-4">
@@ -26,16 +31,13 @@ export const ScriptTile: React.FC<ScriptTileProps> = ({ title, description, scri
 
             <div className="mt-auto pt-4 border-t border-[var(--border-color)] flex items-center justify-between">
                 <code className="text-xs text-[var(--text-muted)]">{scriptlink}</code>
-                <a
-                    href={`/scripts/${scriptlink}`}
-                    download
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed bg-transparent border border-[var(--color-secondary)] text-[var(--color-secondary)] hover:bg-[var(--color-secondary)] hover:text-white px-3 py-1.5 text-sm rounded-md"
+                <button
+                    onClick={handleDownload}
+                    className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background border border-input hover:bg-accent hover:text-accent-foreground h-9 px-3"
                 >
                     <Download className="w-4 h-4 mr-2" />
                     GET
-                </a>
+                </button>
             </div>
         </Card>
     );
