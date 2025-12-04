@@ -38,7 +38,7 @@ export const Landing: React.FC = () => {
                         {/* Gradient Text */}
                         <div className="text-4xl md:text-6xl font-bold tracking-tight text-left leading-tight">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-primary)]">
-                                Automation Suite<br />Platform
+                                Automation Scripting<br />Platform
                             </span>
                         </div>
                     </h1>

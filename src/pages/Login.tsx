@@ -49,7 +49,7 @@ export const Login: React.FC = () => {
                                 <span>Wireless</span>
                             </div>
                             <div className="text-lg font-bold text-[var(--text-primary)] tracking-wider uppercase text-left">
-                                Automation<br />Suite Platform
+                                Automation<br />Scripting Platform
                             </div>
                         </div>
                     </div>

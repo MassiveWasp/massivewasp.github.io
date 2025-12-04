@@ -19,7 +19,7 @@ export const Dashboard: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                         <Server className="w-6 h-6 text-[var(--color-secondary)]" />
-                        <span className="text-xl font-bold tracking-tight">NET<span className="text-[var(--color-secondary)]">OPS</span> PORTAL</span>
+                        <span className="text-xl font-bold tracking-tight"><span className="text-[var(--color-secondary)]">WASP</span> Dashboard</span>
                     </div>
 
                     <div className="flex items-center space-x-4">
